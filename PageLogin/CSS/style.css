@@ -1,0 +1,245 @@
+/* style.css */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Cabeçalho com logo */
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header img.logo {
+    width: 150px; /* Tamanho adequado para celular */
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+header img.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Main container */
+main {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #1A252F;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+/* Botões secundários: Cadastrar-se / Visitante */
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.btn-secondary {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #BDC3C7;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid #3A4550;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #2D3748;
+    color: #FFFFFF;
+    border-color: #4A5568;
+}
+
+/* Melhorando acessibilidade visual em foco */
+.btn-secondary:focus,
+.social-button:focus {
+    outline: 2px solid #E74C3C;
+    outline-offset: 2px;
+}
+/* Formulário de login */
+#box-login {
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #1A252F;
+    color: #FFFFFF;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#loginForm label {
+    color: #BDC3C7;
+    font-size: 14px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+    width: 300px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2D3748;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#loginForm input[type="email"]:focus,
+#loginForm input[type="password"]:focus {
+    background-color: #34495E;
+    box-shadow: 0 0 0 2px #E74C3C;
+}
+
+#loginForm a {
+    color: #E74C3C;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 8px;
+    text-align: center;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+#loginForm a:hover {
+    color: #C0392B;
+}
+
+button[type="submit"] {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #C0392B;
+}
+
+/* Separador "ou" */
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.separator span {
+    background-color: #2D3748;
+    padding: 0 16px;
+    color: #BDC3C7;
+    font-size: 14px;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: #444;
+    transform: translateY(-50%);
+}
+
+.separator::before {
+    right: 50%;
+    margin-right: 10px;
+}
+
+.separator::after {
+    left: 50%;
+    margin-left: 10px;
+}
+
+/* Botões de login social */
+#social-login {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2D3748;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.social-button:hover {
+    background-color: #34495E;
+    transform: scale(1.1);
+}
+
+.social-button img {
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+    }
+
+    #box-login {
+        padding: 20px;
+    }
+
+    .separator {
+        margin: 16px 0;
+    }
+
+    .social-button {
+        width: 40px;
+        height: 40px;
+    }
+}
