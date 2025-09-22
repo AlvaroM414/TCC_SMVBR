@@ -1,0 +1,223 @@
+/* Global Styles & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Header & Logo */
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header img.logo {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+header img.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Main Container */
+main {
+    width: 100%;
+    max-width: 450px; /* Aumentado para acomodar melhor o formulário de cadastro */
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #1A252F;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+/* Form & Inputs */
+#box-login {
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #1A252F;
+    color: #FFFFFF;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Aumentado o gap para melhor espaçamento */
+}
+
+#loginForm label {
+    color: #BDC3C7;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+    font-weight: 500;
+}
+
+#loginForm input[type="email"],
+#loginForm input[type="password"],
+#loginForm input[type="text"] {
+    width: 100%;
+    padding: 14px; /* Aumentado o padding para melhor usabilidade */
+    border: none;
+    border-radius: 8px;
+    background-color: #2D3748;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#loginForm input[type="email"]:focus,
+#loginForm input[type="password"]:focus, 
+#loginForm input[type="text"]:focus {
+    background-color: #34495E;
+    box-shadow: 0 0 0 2px #E74C3C;
+}
+
+/* Checkbox and Terms - CORRIGIDO */
+.checkbox-termos {
+    display: flex;
+    align-items: flex-start; /* Alinhamento no topo para múltiplas linhas */
+    gap: 10px;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #BDC3C7;
+    line-height: 1.4;
+}
+
+.checkbox-termos input[type="checkbox"] {
+    margin-top: 2px; /* Alinhamento vertical fino */
+    transform: scale(1.1); /* Checkbox ligeiramente maior */
+}
+
+.checkbox-termos p {
+    margin: 0;
+}
+
+.checkbox-termos a {
+    color: #E74C3C;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkbox-termos a:hover {
+    text-decoration: underline;
+    color: #C0392B;
+}
+
+/* Buttons */
+button[type="submit"] {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 16px; /* Aumentado para melhor destaque */
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #C0392B;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Removendo seções não utilizadas no cadastro */
+.form-actions,
+.separator,
+#social-login,
+.btn-secondary {
+    display: none;
+}
+
+/* Mensagens de erro (para validação futura) */
+.error-message {
+    color: #E74C3C;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Indicador de força da senha (para implementação futura) */
+.password-strength {
+    height: 4px;
+    background-color: #2D3748;
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    #box-login {
+        padding: 20px;
+    }
+
+    #loginForm {
+        gap: 16px;
+    }
+
+    #loginForm input[type="email"],
+    #loginForm input[type="password"],
+    #loginForm input[type="text"] {
+        padding: 12px;
+    }
+
+    .checkbox-termos {
+        font-size: 13px;
+    }
+}
+
+/* Melhorias para acessibilidade */
+input:required + label::after {
+    content: " *";
+    color: #E74C3C;
+}
+
+/* Animações suaves */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#loginForm > div {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+#loginForm > div:nth-child(1) { animation-delay: 0.1s; }
+#loginForm > div:nth-child(2) { animation-delay: 0.2s; }
+#loginForm > div:nth-child(3) { animation-delay: 0.3s; }
+#loginForm > div:nth-child(4) { animation-delay: 0.4s; }
+.checkbox-termos { animation-delay: 0.5s; }
+button[type="submit"] { animation-delay: 0.6s; }
